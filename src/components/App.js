@@ -20,11 +20,15 @@ class App extends Component {
         <button id="click" onClick={this.handleclick}>
           click
         </button>
-        <p id={this.state.paragraph ? "para" : ""}>
-          {this.state.paragraph
-            ? "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
-            : ""}
-        </p>
+        {this.state.paragraph ? (
+          <p id={this.state.paragraph ? "para" : ""}>
+            {this.state.paragraph
+              ? "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+              : ""}
+          </p>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
