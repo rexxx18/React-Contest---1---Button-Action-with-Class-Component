@@ -8,12 +8,16 @@ class App extends Component {
       paragraph: ""
     };
   }
-   id="";
   handleclick = () => {
-	id="para";
+    let element = document.getElementById("main");
+    let para = document.createElement("p");
+
+    var node = document.createTextNode("This is a new paragraph.");
+    para.appendChild(node);
+    para.setAttribute("id", "para");
+
     this.setState({
-      paragraph:
-        {"Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"}
+      paragraph: element.appendChild(para)
     });
   };
 
@@ -23,7 +27,6 @@ class App extends Component {
         <button id="click" onClick={this.handleclick}>
           click
         </button>
-        <p id={id}>{this.state.paragraph}</p>
       </div>
     );
   }
