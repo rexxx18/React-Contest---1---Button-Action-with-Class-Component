@@ -5,19 +5,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      paragraph: ""
+      paragraph: false
     };
   }
   handleclick = () => {
-    let element = document.getElementById("main");
-    let para = document.createElement("p");
-
-    var node = document.createTextNode("This is a new paragraph.");
-    para.appendChild(node);
-    para.setAttribute("id", "para");
-
     this.setState({
-      paragraph: element.appendChild(para)
+      paragraph: true
     });
   };
 
@@ -27,6 +20,11 @@ class App extends Component {
         <button id="click" onClick={this.handleclick}>
           click
         </button>
+        <p id={this.state.paragraph ? "para" : ""}>
+          {this.state.paragraph
+            ? "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+            : ""}
+        </p>
       </div>
     );
   }
