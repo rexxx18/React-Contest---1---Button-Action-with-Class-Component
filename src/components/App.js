@@ -8,10 +8,12 @@ class App extends Component {
       paragraph: ""
     };
   }
+   id="";
   handleclick = () => {
+	id="para";
     this.setState({
       paragraph:
-        "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+        {"Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"}
     });
   };
 
@@ -21,7 +23,7 @@ class App extends Component {
         <button id="click" onClick={this.handleclick}>
           click
         </button>
-        {this.state.paragraph}
+        <p id={id}>{this.state.paragraph}</p>
       </div>
     );
   }
